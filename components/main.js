@@ -16,6 +16,7 @@ export default function Main() {
           </Link>
         </div>
       </main>
+      <hr></hr>
     </>
   );
 }
