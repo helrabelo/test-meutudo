@@ -38,6 +38,8 @@ Apesar de não estar usando nenhum pré-processador, organizei os arquivos de mo
 
 Confesso que não pesquisei se a organização dessa forma atende as boas práticas do Next
 
+_SEMPRE QUE VER UMA BOLA LARANJA NO PROJETO É UMA SUBSTITUIÇÃO DE UMA IMAGEM_
+
 # 4 - Componente Reativo / API
 
 Para atualizar os dados da doença, utilizei a API _https://covid19api.com/_ como fonte de dados e a lib Axios para consumo dos dados.
