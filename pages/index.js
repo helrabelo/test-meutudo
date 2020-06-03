@@ -18,6 +18,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link href="/static/css/css-helpers.css" rel="stylesheet" />
         <link href="/static/css/navbar.css" rel="stylesheet" />
+        <link href="/static/css/main.css" rel="stylesheet" />
+        <link href="/static/css/about.css" rel="stylesheet" />
+        <link href="/static/css/symptoms.css" rel="stylesheet" />
+        <link href="/static/css/spread.css" rel="stylesheet" />
+        <link href="/static/css/dodont.css" rel="stylesheet" />
+        <link href="/static/css/washhands.css" rel="stylesheet" />
+        <link href="/static/css/banner.css" rel="stylesheet" />
         <link href="/static/css/footer.css" rel="stylesheet" />
       </Head>
       <Navbar />

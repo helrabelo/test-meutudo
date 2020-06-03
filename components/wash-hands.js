@@ -13,80 +13,80 @@ export default function Washhands() {
         <div className="washhands row">
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>Wet Hand</p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>Apply Soap</p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>Rub hand pulp to pulp</p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>lather the both hands</p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>scrub between your fingers</p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>rub the back of the fingers on the opposing palm</p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>clean thumbs</p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>wash fingernails and fingertips</p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p></p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>rinse hands</p>
           </div>
           <div className="washhands-item">
             <div className="image">
-              <h1>Image</h1>
+              <span></span>
             </div>
             <p>dry with a single use towel</p>
           </div>
         </div>
         <div className="washhands-item">
           <div className="image">
-            <h1>Image</h1>
+            <span></span>
           </div>
           <p>Use the towel to turn off the faucet</p>
         </div>
         <div className="washhands-item">
           <div className="image">
-            <h1>Image</h1>
+            <span></span>
           </div>
           <p>your hands are clean</p>
         </div>

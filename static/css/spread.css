@@ -1,0 +1,39 @@
+#spread {
+  background-color: #043184;
+}
+
+#spread .section-header {
+  color: white;
+}
+
+.spread-items {
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.spread-item {
+  background: #f8f8f8;
+  margin: 0 12px;
+  max-width: 270px;
+  border-radius: 8px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.spread-item .image {
+  background: white;
+  padding: 30px;
+}
+
+.spread-item .image span {
+  width: 100px;
+  height: 100px;
+}
+
+.spread-content {
+  padding: 30px;
+}
+
+.spread-content h3 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}

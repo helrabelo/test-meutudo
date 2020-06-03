@@ -1,5 +1,5 @@
 import React from 'react';
-
+import SectionHeader from '../components/section-header';
 export default function About() {
   return (
     <>
@@ -30,13 +30,12 @@ export default function About() {
             </ul>
           </div>
           <div className="column">
-            <div className="img">
-              <h1>Image</h1>
+            <div className="image">
+              <span></span>
             </div>
           </div>
         </div>
       </section>
-      <hr></hr>
     </>
   );
 }

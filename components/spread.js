@@ -14,7 +14,7 @@ export default function Spread() {
           <div className="spread-items row">
             <div className="spread-item">
               <div className="image">
-                <h1>Image</h1>
+                <span></span>
               </div>
               <div className="spread-content">
                 <h3>Person-to-person spread as close Contact with infected</h3>
@@ -27,7 +27,7 @@ export default function Spread() {
             </div>
             <div className="spread-item">
               <div className="image">
-                <h1>Image</h1>
+                <span></span>
               </div>
               <div className="spread-content">
                 <h3>Droplets that from infected Person coughs or sneezes</h3>
@@ -40,7 +40,7 @@ export default function Spread() {
             </div>
             <div className="spread-item">
               <div className="image">
-                <h1>Image</h1>
+                <span></span>
               </div>
               <div className="spread-content">
                 <h3>Touching or contact with infected Surfaces or objects</h3>

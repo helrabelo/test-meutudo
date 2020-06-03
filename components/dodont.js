@@ -13,8 +13,8 @@ export default function Dodont() {
           <div className="do column">
             <span>What should you do</span>
             <div className="dodont-item">
-              <div className="dodont-img">
-                <h1>Image</h1>
+              <div className="dodont-img image">
+                <span></span>
               </div>
               <div className="dodont-content">
                 <h3>Wash your hands sanitizer</h3>
@@ -23,6 +23,11 @@ export default function Dodont() {
                   affected.
                 </p>
               </div>
+            </div>
+            <div className="dodont-item">
+              <div className="dodont-img image">
+                <span></span>
+              </div>
               <div className="dodont-content">
                 <h3>Use Face mask in outdoor</h3>
                 <p>
@@ -30,12 +35,22 @@ export default function Dodont() {
                   affected.
                 </p>
               </div>
+            </div>
+            <div className="dodont-item">
+              <div className="dodont-img image">
+                <span></span>
+              </div>
               <div className="dodont-content">
                 <h3>Drink much water</h3>
                 <p>
                   It is a common sign and also may appear in 2-10 days if you
                   affected.
                 </p>
+              </div>
+            </div>
+            <div className="dodont-item">
+              <div className="dodont-img image">
+                <span></span>
               </div>
               <div className="dodont-content">
                 <h3>Practice respiratory hygiene</h3>
@@ -49,8 +64,8 @@ export default function Dodont() {
           <div className="dont column">
             <span>What you should not do</span>
             <div className="dodont-item">
-              <div className="dodont-img">
-                <h1>Image</h1>
+              <div className="dodont-img image">
+                <span></span>
               </div>
               <div className="dodont-content">
                 <h3>Avoid contact with sick people</h3>
@@ -59,6 +74,11 @@ export default function Dodont() {
                   affected.
                 </p>
               </div>
+            </div>
+            <div className="dodont-item">
+              <div className="dodont-img image">
+                <span></span>
+              </div>
               <div className="dodont-content">
                 <h3>Use Face mask in outdoor</h3>
                 <p>
@@ -66,12 +86,22 @@ export default function Dodont() {
                   affected.
                 </p>
               </div>
+            </div>
+            <div className="dodont-item">
+              <div className="dodont-img image">
+                <span></span>
+              </div>
               <div className="dodont-content">
                 <h3>Drink much water</h3>
                 <p>
                   It is a common sign and also may appear in 2-10 days if you
                   affected.
                 </p>
+              </div>
+            </div>
+            <div className="dodont-item">
+              <div className="dodont-img image">
+                <span></span>
               </div>
               <div className="dodont-content">
                 <h3>Practice respiratory hygiene</h3>
@@ -84,7 +114,6 @@ export default function Dodont() {
           </div>
         </div>
       </section>
-      <hr />
     </>
   );
 }

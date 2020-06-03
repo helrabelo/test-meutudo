@@ -4,7 +4,7 @@ export default function Main() {
   return (
     <>
       <main>
-        <div className="container">
+        <div className="container main">
           <h1>Corona Covid-19 Virus</h1>
           <p>
             The Coronavirus (COVID-19) was first reported in Wuhan, Hubei, China
@@ -12,11 +12,13 @@ export default function Main() {
             bby the World Health Organization (HWO) on 11 March 2020
           </p>
           <Link href="#">
-            <a>How to Protect</a>
+            <a className="button">How to Protect</a>
           </Link>
+          <div className="image">
+            <span></span>
+          </div>
         </div>
       </main>
-      <hr></hr>
     </>
   );
 }
