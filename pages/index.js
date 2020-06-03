@@ -19,6 +19,7 @@ export default function Home() {
         <link href="/static/css/css-helpers.css" rel="stylesheet" />
         <link href="/static/css/navbar.css" rel="stylesheet" />
         <link href="/static/css/main.css" rel="stylesheet" />
+        <link href="/static/css/covid-box.css" rel="stylesheet" />
         <link href="/static/css/about.css" rel="stylesheet" />
         <link href="/static/css/symptoms.css" rel="stylesheet" />
         <link href="/static/css/spread.css" rel="stylesheet" />
