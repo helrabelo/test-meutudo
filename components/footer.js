@@ -9,7 +9,7 @@ export default function Footer() {
           <div className=" row main-footer">
             <div className="column">
               <div className="footer-logo">
-                <h1>Logo</h1>
+                <h3>Logo</h3>
               </div>
               <p>
                 This website is for health information and advice about
@@ -19,22 +19,22 @@ export default function Footer() {
               <ul className="social-icons">
                 <li>
                   <Link href="#">
-                    <a>F</a>
+                    <a className="footer-link">F</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>T</a>
+                    <a className="footer-link">T</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>L</a>
+                    <a className="footer-link">L</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>F</a>
+                    <a className="footer-link">F</a>
                   </Link>
                 </li>
               </ul>
@@ -44,22 +44,22 @@ export default function Footer() {
               <ul className="footer-links">
                 <li>
                   <Link href="#">
-                    <a>WHO Website</a>
+                    <a className="footer-link">WHO Website</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>T</a>
+                    <a className="footer-link">CDC Website</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>L</a>
+                    <a className="footer-link">NHS Website</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>F</a>
+                    <a className="footer-link">Harvard Health</a>
                   </Link>
                 </li>
               </ul>
@@ -69,27 +69,27 @@ export default function Footer() {
               <ul className="footer-links">
                 <li>
                   <Link href="#">
-                    <a>Symptoms</a>
+                    <a className="footer-link">Symptoms</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>Prevention</a>
+                    <a className="footer-link">Prevention</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>Protect yourself</a>
+                    <a className="footer-link">Protect yourself</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>FAQs</a>
+                    <a className="footer-link">FAQs</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>About Corona</a>
+                    <a className="footer-link">About Corona</a>
                   </Link>
                 </li>
               </ul>
@@ -99,39 +99,43 @@ export default function Footer() {
               <ul className="footer-links">
                 <li>
                   <Link href="#">
-                    <a>Healthcare Professionals</a>
+                    <a className="footer-link">Healthcare Professionals</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>Healthcare Facilities</a>
+                    <a className="footer-link">Healthcare Facilities</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>Older Adults and Medical Conditions</a>
+                    <a className="footer-link">
+                      Older Adults and Medical Conditions
+                    </a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#">
-                    <a>Repare your family</a>
+                    <a className="footer-link">Repare your family</a>
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
-          <div className="footer-rights"></div>
-          <p>@2020 E-learning All rights reserved.</p>
-
-          <p>
-            <Link href="#">
-              <a>Privacy</a>
-            </Link>
-            and
-            <Link href="#">
-              <a>Terms Conditions</a>
-            </Link>
-          </p>
+        </div>
+        <div className="footer-rights">
+          <div className="container row">
+            <p>@2020 E-learning All rights reserved.</p>
+            <div className="rights-links">
+              <Link href="#">
+                <a className="footer-link">Privacy</a>
+              </Link>
+              <p>|</p>
+              <Link href="#">
+                <a className="footer-link">Terms Conditions</a>
+              </Link>
+            </div>
+          </div>
         </div>
       </footer>
     </>

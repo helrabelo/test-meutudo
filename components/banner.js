@@ -15,12 +15,11 @@ export default function Banner() {
           </div>
           <div className="banner-cta">
             <Link href="#">
-              <a>get appointment</a>
+              <a className="button">get appointment</a>
             </Link>
           </div>
         </div>
       </section>
-      <hr />
     </>
   );
 }

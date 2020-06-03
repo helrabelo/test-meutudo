@@ -1,30 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Como Rodar o projeto:
 
-## Getting Started
-
-First, run the development server:
+O projeto foi feito em cima do NextJS, para que ele funcione na sua máquina, basta clonar o projeto e rodar
 
 ```bash
-npm run dev
-# or
 yarn dev
+#ou, se preferir,
+npx next dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+O projeto estará acessível via [https://localhost:3000]
 
-## Learn More
+## Sobre o projeto:
 
-To learn more about Next.js, take a look at the following resources:
+Uma landing page básica contendo informações sobre o COVID-19, além de um componente reativo com dados atualizados sobre a doença.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Desenvolvimento
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# 1 - First Steps
 
-## Deploy on Vercel
+Foi feito o boilerplate do projeto, instalando o Next/React
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# 2 - Organizando pastas bases
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Criação das pastas _static_ para inserir os assets de css/js e _components_ para dividir as seções do site em arquivos individuais.
+
+Optei por essa estratégia pelo seguinte motivo:
+
+Geralmente empresas tem websites bastante completos e por muitas vezes seções costumam ser "repetidas" (ao menos em termos de estrutura de html) e, para evitar código duplicado, optei por já manter desde o início uma estrutura componentizada
+
+# 3 - Desenvolvimento de HTML/CSS
+
+O CSS do projeto foi inteiramente desenvolvido à mão, tanto pelo meu nato desprezo por frameworks de CSS, tanto para ilustrar que tenho a competência.
+
+Apesar de não estar usando nenhum pré-processador, organizei os arquivos de modo que a transição para um SASS/LESS seja mais simples, uma vez que cada compoenente já tem seu próprio arquivo de CSS
+
+Confesso que não pesquisei se a organização dessa forma atende as boas práticas do Next
+
+# 4 - Componente Reativo / API
+
+Para atualizar os dados da doença, utilizei a API _https://covid19api.com/_ como fonte de dados e a lib Axios para consumo dos dados.
