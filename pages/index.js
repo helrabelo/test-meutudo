@@ -1,14 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import Navbar from '../components/navbar';
-import Main from '../components/main';
-import About from '../components/about';
-import Symptons from '../components/symptons';
-import Spread from '../components/spread';
-import Dodont from '../components/dodont';
-import Washhands from '../components/wash-hands';
-import Banner from '../components/banner';
-import Footer from '../components/footer';
+import Popup from '../components/popup';
+
+import classes from '../static/css/globalStyles.less';
 
 export default function Home() {
   return (
@@ -16,27 +10,12 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
-        <link href="/static/css/css-helpers.css" rel="stylesheet" />
-        <link href="/static/css/navbar.css" rel="stylesheet" />
-        <link href="/static/css/main.css" rel="stylesheet" />
-        <link href="/static/css/covid-box.css" rel="stylesheet" />
-        <link href="/static/css/about.css" rel="stylesheet" />
-        <link href="/static/css/symptoms.css" rel="stylesheet" />
-        <link href="/static/css/spread.css" rel="stylesheet" />
-        <link href="/static/css/dodont.css" rel="stylesheet" />
-        <link href="/static/css/washhands.css" rel="stylesheet" />
-        <link href="/static/css/banner.css" rel="stylesheet" />
-        <link href="/static/css/footer.css" rel="stylesheet" />
+        <link href="/static/css/globalStyles.less" rel="stylesheet" />
       </Head>
-      <Navbar />
-      <Main />
-      <About />
-      <Symptons />
-      <Spread />
-      <Dodont />
-      <Washhands />
-      <Banner />
-      <Footer />
+      <body>
+        <h1>hi</h1>
+        <Popup />
+      </body>
     </>
   );
 }
