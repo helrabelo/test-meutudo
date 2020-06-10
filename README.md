@@ -52,4 +52,4 @@ LESS DOCS:
 http://lesscss.org/features/
 
 Popup:
-https://react-popup.elazizi.com/home/
+https://www.npmjs.com/package/react-modal#examples

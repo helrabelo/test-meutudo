@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Popup from '../components/popup';
+import Container from '../components/Container';
 
 import classes from '../static/css/globalStyles.less';
 
@@ -12,10 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link href="/static/css/globalStyles.less" rel="stylesheet" />
       </Head>
-      <body>
-        <h1>hi</h1>
-        <Popup />
-      </body>
+      <h1>hi</h1>
+      <Popup />
     </>
   );
 }
