@@ -1,6 +1,6 @@
-const withLESS = require('@zeit/next-less');
+const withCSS = require('@zeit/next-css');
 
-module.exports = withLESS({
+module.exports = withCSS({
   webpack: (config, { isServer }) => {
     if (isServer) {
       const antStyles = /antd-mobile\/.*?\/style.*?/;

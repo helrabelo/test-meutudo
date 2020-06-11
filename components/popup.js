@@ -96,7 +96,6 @@ ReactModal.setAppElement('#popup');
 
 export default function PopUp() {
   const [modalIsOpen, setIsOpen] = React.useState(true);
-  let isOpen = true;
 
   function afterOpenModal() {}
 

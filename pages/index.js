@@ -1,20 +1,20 @@
 import React from 'react';
 import Head from 'next/head';
-import Popup from '../components/popup';
-import Container from '../components/Container';
+import PopUp from '../components/PopUp';
 import Navbar from '../components/Navbar';
-import classes from '../static/css/globalStyles.less';
+import Tabs from '../components/Tabs';
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
         <link href="/static/css/globalStyles.less" rel="stylesheet" />
       </Head>
-      <h1>hi</h1>
-      <div id="popup" />
+      <div id="popup"></div>
+      {/* <div id="menu"></div> */}
+      <Navbar />
+      <Tabs />
     </>
   );
 }
