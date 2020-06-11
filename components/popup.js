@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import ReactModal from 'react-modal';
-
 import Container from './Container';
 import Image from './Image';
 import styles from 'styled-components';
@@ -92,66 +92,57 @@ white-space: nowrap;
 border: none;
 `;
 
-class PopUp extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      showModal: false,
-    };
+ReactModal.setAppElement('#popup');
 
-    this.handleOpenModal = this.handleOpenModal.bind(this);
-    this.handleCloseModal = this.handleCloseModal.bind(this);
+export default function PopUp() {
+  const [modalIsOpen, setIsOpen] = React.useState(true);
+  let isOpen = true;
+
+  function afterOpenModal() {}
+
+  function closeModal() {
+    console.log('trying to close');
+    setIsOpen(false);
   }
 
-  handleOpenModal() {
-    this.setState({ showModal: true });
-  }
-
-  handleCloseModal() {
-    this.setState({ showModal: false });
-  }
-
-  componentDidMount() {
-    this.setState({ showModal: true });
-  }
-
-  render() {
-    return (
-      <>
-        <ReactModal
-          isOpen={this.state.showModal}
-          contentLabel="Minimal Modal Example"
-          style={customStyles}
+  return (
+    <>
+      <ReactModal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <Container
+          style={{
+            justifyContent: 'flex-end',
+            height: '100%',
+          }}
+          background={'../static/images/popupbackground.png'}
         >
-          <Container
-            style={{
-              justifyContent: 'flex-end',
-              height: '100%',
-            }}
-            background={'../static/images/popupbackground.png'}
-          >
-            <PopUpWrapper>
-              <ImageWrapper>
-                <Image source="../static/images/popup-main.png" />
-              </ImageWrapper>
-              <PopUpContentWrapper>
-                <Title>Covid-19</Title>
-                <SubTitle>
-                  Protect yourself and others around you by
-                  <br /> knowing the facts and taking appropriate precautions.
-                </SubTitle>
-                <PopUpButtonWrapper>
-                  <ClosePopUpButton onClick={this.handleCloseModal}>
-                    Get started
-                  </ClosePopUpButton>
-                </PopUpButtonWrapper>
-              </PopUpContentWrapper>
-            </PopUpWrapper>
-          </Container>
-        </ReactModal>
-      </>
-    );
-  }
+          <PopUpWrapper>
+            <ImageWrapper>
+              <Image source="../static/images/popup-main.png" />
+            </ImageWrapper>
+            <PopUpContentWrapper>
+              <Title>Covid-19</Title>
+              <SubTitle>
+                Protect yourself and others around you by
+                <br /> knowing the facts and taking appropriate precautions.
+              </SubTitle>
+              <PopUpButtonWrapper>
+                <ClosePopUpButton onClick={closeModal}>
+                  Get started
+                </ClosePopUpButton>
+              </PopUpButtonWrapper>
+            </PopUpContentWrapper>
+          </PopUpWrapper>
+        </Container>
+      </ReactModal>
+    </>
+  );
 }
 
-export default PopUp;
+if (typeof window !== 'undefined') {
+  ReactDOM.render(<PopUp />, document.getElementById('popup'));
+}

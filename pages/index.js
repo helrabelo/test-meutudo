@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Popup from '../components/popup';
 import Container from '../components/Container';
-
+import Navbar from '../components/Navbar';
 import classes from '../static/css/globalStyles.less';
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         <link href="/static/css/globalStyles.less" rel="stylesheet" />
       </Head>
       <h1>hi</h1>
-      <Popup />
+      <div id="popup" />
     </>
   );
 }
