@@ -1,0 +1,5 @@
+# Next-on-Netlify Redirects
+/api/hello  /.netlify/functions/next_api_hello  200
+/index  /index.html  200
+/  /index.html  200
+/404  /404.html  200

@@ -41,29 +41,29 @@ export default function CovidAbout() {
       <Container>
         <Row>
           <CoronaItem>
-            <CoronaIcon src="../static/images/1.png" />
+            <CoronaIcon src="/1.png" />
             <CoronaTitle>Use Sanitizer</CoronaTitle>
           </CoronaItem>
           <CoronaItem>
-            <CoronaIcon src="../static/images/2.png" />
+            <CoronaIcon src="/2.png" />
             <CoronaTitle>Stay Isolated</CoronaTitle>
           </CoronaItem>
           <CoronaItem>
-            <CoronaIcon src="../static/images/3.png" />
+            <CoronaIcon src="/3.png" />
             <CoronaTitle>Wear Mask</CoronaTitle>
           </CoronaItem>
         </Row>
         <Row>
           <CoronaItem>
-            <CoronaIcon src="../static/images/4.png" />
+            <CoronaIcon src="/4.png" />
             <CoronaTitle>Maintain Distance</CoronaTitle>
           </CoronaItem>
           <CoronaItem>
-            <CoronaIcon src="../static/images/5.png" />
+            <CoronaIcon src="/5.png" />
             <CoronaTitle>Health Checkup</CoronaTitle>
           </CoronaItem>
           <CoronaItem>
-            <CoronaIcon src="../static/images/6.png" />
+            <CoronaIcon src="/6.png" />
             <CoronaTitle>Follow Govt Rules</CoronaTitle>
           </CoronaItem>
         </Row>

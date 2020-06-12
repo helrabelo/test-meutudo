@@ -122,11 +122,11 @@ export default function PopUp() {
             justifyContent: 'flex-end',
             height: '100%',
           }}
-          background={'../static/images/popupbackground.png'}
+          background={'/popupbackground.png'}
         >
           <PopUpWrapper>
             <ImageWrapper>
-              <Image source="../static/images/popup-main.png" />
+              <Image source="/popup-main.png" />
             </ImageWrapper>
             <PopUpContentWrapper>
               <Title>Covid-19</Title>

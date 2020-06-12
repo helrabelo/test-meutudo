@@ -65,7 +65,7 @@ export default function CovidSymptoms() {
       <Container>
         <Title>Symptoms</Title>
         <Symptom>
-          <SymptomImage src="../static/images/caugh.png" />
+          <SymptomImage src="/caugh.png" />
           <SymptomDescription>
             <SymptomTitle>Dry cough</SymptomTitle>
             <SymptomDetail>
@@ -77,7 +77,7 @@ export default function CovidSymptoms() {
           </SymptomDescription>
         </Symptom>
         <Symptom>
-          <SymptomImage src="../static/images/fever.png" />
+          <SymptomImage src="/fever.png" />
           <SymptomDescription>
             <SymptomTitle>Fever</SymptomTitle>
             <SymptomDetail>

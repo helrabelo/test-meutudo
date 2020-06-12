@@ -92,17 +92,11 @@ export default function Navbar() {
             <Clock>9:41</Clock>
           </NavbarTopLeft>
           <NavbarTopRight>
-            <img src="../static/images/CellularConnection.svg" />
+            <img src="/CellularConnection.svg" />
 
-            <img
-              src="../static/images/Wifi.svg"
-              style={{ marginLeft: '4px' }}
-            />
+            <img src="/Wifi.svg" style={{ marginLeft: '4px' }} />
 
-            <img
-              src="../static/images/Battery.svg"
-              style={{ marginLeft: '4px' }}
-            />
+            <img src="/Battery.svg" style={{ marginLeft: '4px' }} />
           </NavbarTopRight>
         </NavbarTop>
         <NavbarBottom>
@@ -121,7 +115,7 @@ export default function Navbar() {
               }}
             >
               <img
-                src="../static/images/menu.png"
+                src="/menu.png"
                 style={{
                   display: 'flex',
                   justifyContent: 'flex-start',
@@ -145,7 +139,7 @@ export default function Navbar() {
             </Menu>
           </NavbarBottomLeft>
           <NavbarBottomRight>
-            <img src="../static/images/notification.png" />
+            <img src="/notification.png" />
           </NavbarBottomRight>
         </NavbarBottom>
       </Container>
