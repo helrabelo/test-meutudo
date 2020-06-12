@@ -5,10 +5,11 @@ import styles from 'styled-components';
 import { Button, Menu, MenuItem } from '@material-ui/core';
 
 const NavbarWrapper = styles.div`
-  border: 3px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 10px auto;
+  width: 100%;
 `;
 
 const NavbarTop = styles.div`
@@ -33,12 +34,15 @@ const NavbarBottomLeft = styles.div`
 `;
 
 const NavbarBottomRight = styles.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
 `;
 
 const Clock = styles.p`
   font-family: 'SF Pro';
   font-size: 0.8em;
-  4
+  font-weight: bold;
 `;
 
 export default function Navbar() {
@@ -59,14 +63,13 @@ export default function Navbar() {
           <Clock>9:41</Clock>
         </NavbarTopLeft>
         <NavbarTopRight>
-          <img src="../static/images/Wifi.svg" />
-          <img
-            src="../static/images/CellularConnection.svg"
-            style={{ marginLeft: '2px' }}
-          />
+          <img src="../static/images/CellularConnection.svg" />
+
+          <img src="../static/images/Wifi.svg" style={{ marginLeft: '4px' }} />
+
           <img
             src="../static/images/Battery.svg"
-            style={{ marginLeft: '2px' }}
+            style={{ marginLeft: '4px' }}
           />
         </NavbarTopRight>
       </NavbarTop>
@@ -76,8 +79,16 @@ export default function Navbar() {
             aria-controls="simple-menu"
             aria-haspopup="true"
             onClick={handleClick}
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              margin: '0',
+              padding: '0',
+              width: 'auto',
+            }}
           >
-            Open Menu
+            <img src="../static/images/menu.png" />
           </Button>
           <Menu
             id="simple-menu"

@@ -55,35 +55,35 @@ const StatsWrapper = styles.div`
 
 export default function CovidCases() {
   const data = [
-    { x: 'cured', y: 26 },
-    { x: 'infected', y: 63 },
-    { x: 'deaths', y: 11 },
+    { x: '26%', y: 26 },
+    { x: '63%', y: 63 },
+    { x: '11%', y: 11 },
   ];
 
   return (
     <>
       <PieWrapper>
-        <svg viewBox="0 0 400 400">
+        <svg viewBox="0 0 300 300">
           <VictoryPie
             standalone={false}
             width={300}
             height={300}
             data={data}
             innerRadius={120}
-            labelRadius={90}
+            labelRadius={130}
             startAngle={-90}
             endAngle={270}
             colorScale={['#55E13A', '#FFC259', '#FF5959']}
             style={{
-              labels: { fontSize: 20, fill: 'green' },
+              labels: { fontSize: 20, fill: 'black' },
             }}
           />
           <VictoryLabel
             textAnchor="middle"
-            style={{ fontSize: 20 }}
+            style={{ fontSize: 40, fontFamily: 'Roboto' }}
             x={150}
             y={150}
-            text="Pie!"
+            text="9255"
           />
         </svg>
       </PieWrapper>

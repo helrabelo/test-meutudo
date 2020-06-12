@@ -8,7 +8,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-end;
 align-items: center;
-margin: 0 20px;
+padding: 0 20px;
 `;
 
 const ContainerDiv = styles.div`
