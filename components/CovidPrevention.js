@@ -1,5 +1,13 @@
 import React from 'react';
 
+import CovidAbout from './CovidAbout';
+import CovidSymptoms from './CovidSymptoms';
+
 export default function CovidPrevention() {
-  return <p>Covid Prevention</p>;
+  return (
+    <>
+      <CovidAbout />
+      <CovidSymptoms />
+    </>
+  );
 }
