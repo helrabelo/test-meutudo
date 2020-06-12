@@ -41,7 +41,7 @@ Se tiver feito o upload funcional do projeto em algum local (heroku, aws, etc), 
 
 ABORDAGEM:
 USAR O LESS PARA ESTILOS GLOBAIS
-USAR O STYLED COMPONENTS PARA CUSTOMIZAR O ANT DESIGN
+USAR O STYLED COMPONENTS PARA CUSTOMIZAR O Material UI
 USAR A API
 https://api.covid19api.com/
 

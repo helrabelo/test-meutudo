@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 import * as V from 'victory';
 import { VictoryPie, VictoryLabel, VictoryTheme } from 'victory';
 import styles from 'styled-components';
@@ -96,89 +97,121 @@ const StatLabel = styles.span`
 
 const StatValue = styles.p``;
 
-export default function CovidCases() {
-  const data = [
-    { x: '26%', y: 26 },
-    { x: '63%', y: 63 },
-    { x: '11%', y: 11 },
-  ];
+const data = [
+  { x: '26', y: 26 },
+  { x: '63%', y: 63 },
+  { x: '11%', y: 11 },
+];
 
-  return (
-    <CasesWrapper>
-      <Container>
-        <PieWrapper>
-          <svg
-            viewBox="0 0 270 270"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '0',
-              margin: '10px auto',
-            }}
-          >
-            <VictoryPie
-              standalone={false}
-              width={270}
-              height={270}
-              data={data}
-              innerRadius={105}
-              labelRadius={112}
-              startAngle={-90}
-              endAngle={270}
-              colorScale={['#55E13A', '#FFC259', '#FF5959']}
+class CovidCases extends Component {
+  state = {
+    confirmed: 'loading..',
+    active: 'loading..',
+    recovered: 'loading',
+    deaths: 'loading',
+    error: null,
+  };
+
+  async fetchData() {
+    const response = await axios.get('https://api.covid19api.com/summary');
+    console.log(response);
+    try {
+      this.setState({
+        confirmed: response.data.Global.TotalConfirmed.toString(),
+        active: response.data.Global.TotalConfirmed,
+        recovered: response.data.Global.TotalRecovered,
+        deaths: response.data.Global.TotalDeaths,
+      });
+    } catch (error) {
+      this.setState({ error });
+    }
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  render() {
+    return (
+      <CasesWrapper>
+        <Container>
+          <PieWrapper>
+            <svg
+              viewBox="0 0 270 270"
               style={{
-                labels: { fontSize: 16, fill: 'black' },
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '0',
+                margin: '10px auto',
               }}
-            />
-            <VictoryLabel
-              textAnchor="middle"
-              style={{ fontSize: 40, fontFamily: 'Roboto' }}
-              x={135}
-              y={135}
-              text="9255"
-            />
-          </svg>
-        </PieWrapper>
-      </Container>
+            >
+              <VictoryPie
+                standalone={false}
+                width={270}
+                height={270}
+                data={data}
+                innerRadius={105}
+                labelRadius={112}
+                startAngle={-90}
+                endAngle={270}
+                colorScale={['#55E13A', '#FFC259', '#FF5959']}
+                style={{
+                  labels: { fontSize: 16, fill: 'black' },
+                }}
+              />
+              <VictoryLabel
+                textAnchor="middle"
+                style={{ fontSize: 40, fontFamily: 'Roboto' }}
+                x={135}
+                y={135}
+                text="9255"
+              />
+            </svg>
+          </PieWrapper>
+        </Container>
 
-      <Container>
-        <CasesWrapper>
-          <CasesList>
-            <CasesListItem>
-              <StatusItem style={{ background: '#FFC259' }}></StatusItem>
-              <ItemTitle>Active Cases</ItemTitle>
-              <ItemTotal>6000</ItemTotal>
-            </CasesListItem>
-            <CasesListItem>
-              <StatusItem style={{ background: '#55E13A' }}></StatusItem>
-              <ItemTitle>Discharge</ItemTitle>
-              <ItemTotal>2500</ItemTotal>
-            </CasesListItem>
-            <CasesListItem>
-              <StatusItem style={{ background: '#FF5959' }}></StatusItem>
-              <ItemTitle>Deaths</ItemTitle>
-              <ItemTotal>755</ItemTotal>
-            </CasesListItem>
-          </CasesList>
-        </CasesWrapper>
-      </Container>
-      <Container>
-        <StatsWrapper>
-          <Stat>
-            <StatValue>9000</StatValue>
-            <StatLabel>Male</StatLabel>
-          </Stat>
-          <Stat>
-            <StatValue>55</StatValue>
-            <StatLabel>Female</StatLabel>
-          </Stat>
-          <Stat>
-            <StatValue>280</StatValue>
-            <StatLabel>Children</StatLabel>
-          </Stat>
-        </StatsWrapper>
-      </Container>
-    </CasesWrapper>
-  );
+        <Container>
+          <CasesWrapper>
+            <CasesList>
+              <CasesListItem>
+                <StatusItem style={{ background: '#FFC259' }}></StatusItem>
+                <ItemTitle>Active Cases</ItemTitle>
+                <ItemTotal>6000</ItemTotal>
+              </CasesListItem>
+              <CasesListItem>
+                <StatusItem style={{ background: '#55E13A' }}></StatusItem>
+                <ItemTitle>Discharge</ItemTitle>
+                <ItemTotal>2500</ItemTotal>
+              </CasesListItem>
+              <CasesListItem>
+                <StatusItem style={{ background: '#FF5959' }}></StatusItem>
+                <ItemTitle>Deaths</ItemTitle>
+                <ItemTotal>755</ItemTotal>
+              </CasesListItem>
+            </CasesList>
+          </CasesWrapper>
+        </Container>
+
+        <Container>
+          <StatsWrapper>
+            <Stat>
+              <StatValue>9000</StatValue>
+              <StatLabel>Male</StatLabel>
+            </Stat>
+            <Stat>
+              <StatValue>55</StatValue>
+              <StatLabel>Female</StatLabel>
+            </Stat>
+            <Stat>
+              <StatValue>280</StatValue>
+              <StatLabel>Children</StatLabel>
+            </Stat>
+          </StatsWrapper>
+        </Container>
+      </CasesWrapper>
+    );
+  }
 }
+
+export default CovidCases;
