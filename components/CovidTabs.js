@@ -68,6 +68,7 @@ export default function CovidTabs() {
           onChange={handleChange}
           aria-label="simple tabs example"
           TabIndicatorProps={{ style: { background: '#665EFF' } }}
+          style={{ margin: '0' }}
         >
           <Tab className="covidTab" label="Cases" {...a11yProps(0)} />
           <Tab className="covidTab" label="Prevention" {...a11yProps(1)} />

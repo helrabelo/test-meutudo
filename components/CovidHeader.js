@@ -33,6 +33,7 @@ const HeaderTitle = styles.h3`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
 `;
 
 const Container = styles.div`
@@ -45,7 +46,7 @@ const Container = styles.div`
 
 export default function SimpleSelect() {
   const classes = useStyles();
-  const [age, setAge] = React.useState('US');
+  const [age, setAge] = React.useState('');
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -57,14 +58,16 @@ export default function SimpleSelect() {
         <Container>
           <HeaderTitle>COVID-19</HeaderTitle>
           <FormControl className={classes.formControl}>
+            {/* <InputLabel id="demo-simple-select-label">Age</InputLabel> */}
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              value={null}
+              value={age}
               onChange={handleChange}
-              defaultValue={10}
+              defaultValue={'US'}
+              style={{ margin: '0 10px' }}
             >
-              <MenuItem value={10}>
+              <MenuItem value={'US'} style={{ display: 'flex' }}>
                 <ReactCountryFlag
                   alt="US"
                   svg
@@ -74,8 +77,9 @@ export default function SimpleSelect() {
                     borderRadius: '100px',
                   }}
                 />
+                <p>US</p>
               </MenuItem>
-              <MenuItem value={20}>
+              <MenuItem value={'BR'}>
                 <ReactCountryFlag
                   alt="US"
                   svg
@@ -85,8 +89,9 @@ export default function SimpleSelect() {
                     borderRadius: '100px',
                   }}
                 />
+                <p>BR</p>
               </MenuItem>
-              <MenuItem value={30}>
+              <MenuItem value={'IT'}>
                 <ReactCountryFlag
                   alt="US"
                   svg
@@ -95,6 +100,7 @@ export default function SimpleSelect() {
                     fontSize: '20px',
                   }}
                 />
+                <p>IT</p>
               </MenuItem>
             </Select>
           </FormControl>

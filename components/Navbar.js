@@ -37,13 +37,15 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 margin: 20px 0 10px 0;
+width: 100%;
 padding: 0;
 `;
 
 const NavbarBottomLeft = styles.div`
   margin: 0;
   padding: 0 20px;
-
+  display: flex;
+  justify-content: flex-start;
 
 `;
 
@@ -118,7 +120,17 @@ export default function Navbar() {
                 width: 'auto',
               }}
             >
-              <img src="../static/images/menu.png" />
+              <img
+                src="../static/images/menu.png"
+                style={{
+                  display: 'flex',
+                  justifyContent: 'flex-start',
+                  alignItems: 'center',
+                  margin: '0',
+                  padding: '0',
+                  width: 'auto',
+                }}
+              />
             </Button>
             <Menu
               id="simple-menu"
