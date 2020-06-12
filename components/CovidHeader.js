@@ -6,7 +6,6 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import ReactCountryFlag from 'react-country-flag';
-import CovidTabs from './CovidTabs';
 
 import styles from 'styled-components';
 
@@ -24,6 +23,24 @@ const CovidHeaderWrapper = styles.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+`;
+
+const HeaderTitle = styles.h3`
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Container = styles.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+  margin-bottom: 20px;
 `;
 
 export default function SimpleSelect() {
@@ -37,55 +54,52 @@ export default function SimpleSelect() {
   return (
     <>
       <CovidHeaderWrapper>
-        <h3>COVID-19</h3>
-        <FormControl className={classes.formControl}>
-          <InputLabel id="demo-simple-select-label">
-            <ReactCountryFlag
-              alt="US"
-              countryCode="US"
-              style={{
-                fontSize: '30px',
-              }}
-            />
-          </InputLabel>
-
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={age}
-            onChange={handleChange}
-          >
-            <MenuItem value={10}>
-              <ReactCountryFlag
-                alt="US"
-                countryCode="US"
-                style={{
-                  fontSize: '20px',
-                }}
-              />
-            </MenuItem>
-            <MenuItem value={20}>
-              <ReactCountryFlag
-                alt="US"
-                countryCode="US"
-                style={{
-                  fontSize: '20px',
-                }}
-              />
-            </MenuItem>
-            <MenuItem value={30}>
-              <ReactCountryFlag
-                alt="US"
-                countryCode="US"
-                style={{
-                  fontSize: '20px',
-                }}
-              />
-            </MenuItem>
-          </Select>
-        </FormControl>
+        <Container>
+          <HeaderTitle>COVID-19</HeaderTitle>
+          <FormControl className={classes.formControl}>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={null}
+              onChange={handleChange}
+              defaultValue={10}
+            >
+              <MenuItem value={10}>
+                <ReactCountryFlag
+                  alt="US"
+                  svg
+                  countryCode="US"
+                  style={{
+                    fontSize: '20px',
+                    borderRadius: '100px',
+                  }}
+                />
+              </MenuItem>
+              <MenuItem value={20}>
+                <ReactCountryFlag
+                  alt="US"
+                  svg
+                  countryCode="BR"
+                  style={{
+                    fontSize: '20px',
+                    borderRadius: '100px',
+                  }}
+                />
+              </MenuItem>
+              <MenuItem value={30}>
+                <ReactCountryFlag
+                  alt="US"
+                  svg
+                  countryCode="IT"
+                  style={{
+                    fontSize: '20px',
+                  }}
+                />
+              </MenuItem>
+            </Select>
+          </FormControl>
+        </Container>
       </CovidHeaderWrapper>
-      <CovidTabs />
     </>
   );
 }

@@ -4,18 +4,21 @@ import { VictoryPie, VictoryLabel, VictoryTheme } from 'victory';
 import styles from 'styled-components';
 
 const PieWrapper = styles.div`
-  width: 300px;
+  width: 100%;
   height: 300px;
   background: white;
   box-shadow: 4px 4px 16px #455B6314;
-  margin: 20px auto;
+  margin: 0 auto;
+  padding: 0 20px;
+  border: 1px solid green;
 `;
 
 const CasesWrapper = styles.div`
-  width: 300px;
+  width: 100%;
   background: white;
   box-shadow: 4px 4px 16px #455B6314;
-  margin: 20px auto;
+  margin: 0 auto;
+  border: 1px solid red;
 `;
 
 const CasesList = styles.ul`
@@ -61,28 +64,31 @@ export default function CovidCases() {
   ];
 
   return (
-    <>
+    <CasesWrapper>
       <PieWrapper>
-        <svg viewBox="0 0 300 300">
+        <svg
+          viewBox="0 0 270 270"
+          style={{ padding: '16px', margin: '0 auto' }}
+        >
           <VictoryPie
             standalone={false}
-            width={300}
-            height={300}
+            width={240}
+            height={240}
             data={data}
-            innerRadius={120}
-            labelRadius={130}
+            innerRadius={85}
+            labelRadius={95}
             startAngle={-90}
             endAngle={270}
             colorScale={['#55E13A', '#FFC259', '#FF5959']}
             style={{
-              labels: { fontSize: 20, fill: 'black' },
+              labels: { fontSize: 16, fill: 'black' },
             }}
           />
           <VictoryLabel
             textAnchor="middle"
             style={{ fontSize: 40, fontFamily: 'Roboto' }}
-            x={150}
-            y={150}
+            x={120}
+            y={120}
             text="9255"
           />
         </svg>
@@ -111,6 +117,6 @@ export default function CovidCases() {
         <p>Female</p>
         <p>Children</p>
       </StatsWrapper>
-    </>
+    </CasesWrapper>
   );
 }

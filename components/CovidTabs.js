@@ -46,6 +46,7 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    width: '100%',
     flexGrow: 1,
     backgroundColor: '#f8f8f8',
   },
@@ -66,10 +67,11 @@ export default function CovidTabs() {
           value={value}
           onChange={handleChange}
           aria-label="simple tabs example"
+          TabIndicatorProps={{ style: { background: '#665EFF' } }}
         >
-          <Tab label="Cases" {...a11yProps(0)} />
-          <Tab label="Prevention" {...a11yProps(1)} />
-          <Tab label="Hospitals" {...a11yProps(2)} />
+          <Tab className="covidTab" label="Cases" {...a11yProps(0)} />
+          <Tab className="covidTab" label="Prevention" {...a11yProps(1)} />
+          <Tab className="covidTab" label="Hospitals" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

@@ -9,6 +9,7 @@ const NavbarWrapper = styles.div`
   flex-direction: column;
   justify-content: space-between;
   margin: 10px auto;
+  padding: 0;
   width: 100%;
 `;
 
@@ -16,27 +17,44 @@ const NavbarTop = styles.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0;
+
 `;
 
 const NavbarTopLeft = styles.div`
+margin: 0;
+
 `;
 
 const NavbarTopRight = styles.div`
+  margin: 0;
 `;
 
 const NavbarBottom = styles.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
+margin: 20px 0 10px 0;
+padding: 0;
 `;
 
 const NavbarBottomLeft = styles.div`
+  margin: 0;
+  padding: 0 20px;
+
+
 `;
 
 const NavbarBottomRight = styles.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
+margin: 0;
+padding: 0 20px;
+
+
 `;
 
 const Clock = styles.p`
@@ -45,6 +63,14 @@ const Clock = styles.p`
   font-weight: bold;
 `;
 
+const Container = styles.div`
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`;
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -58,54 +84,59 @@ export default function Navbar() {
 
   return (
     <NavbarWrapper>
-      <NavbarTop>
-        <NavbarTopLeft>
-          <Clock>9:41</Clock>
-        </NavbarTopLeft>
-        <NavbarTopRight>
-          <img src="../static/images/CellularConnection.svg" />
+      <Container>
+        <NavbarTop>
+          <NavbarTopLeft>
+            <Clock>9:41</Clock>
+          </NavbarTopLeft>
+          <NavbarTopRight>
+            <img src="../static/images/CellularConnection.svg" />
 
-          <img src="../static/images/Wifi.svg" style={{ marginLeft: '4px' }} />
+            <img
+              src="../static/images/Wifi.svg"
+              style={{ marginLeft: '4px' }}
+            />
 
-          <img
-            src="../static/images/Battery.svg"
-            style={{ marginLeft: '4px' }}
-          />
-        </NavbarTopRight>
-      </NavbarTop>
-      <NavbarBottom>
-        <NavbarBottomLeft>
-          <Button
-            aria-controls="simple-menu"
-            aria-haspopup="true"
-            onClick={handleClick}
-            style={{
-              display: 'flex',
-              justifyContent: 'flex-start',
-              alignItems: 'center',
-              margin: '0',
-              padding: '0',
-              width: 'auto',
-            }}
-          >
-            <img src="../static/images/menu.png" />
-          </Button>
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
-          </Menu>
-        </NavbarBottomLeft>
-        <NavbarBottomRight>
-          <img src="../static/images/notification.png" />
-        </NavbarBottomRight>
-      </NavbarBottom>
+            <img
+              src="../static/images/Battery.svg"
+              style={{ marginLeft: '4px' }}
+            />
+          </NavbarTopRight>
+        </NavbarTop>
+        <NavbarBottom>
+          <NavbarBottomLeft>
+            <Button
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+              style={{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+                margin: '0',
+                padding: '0',
+                width: 'auto',
+              }}
+            >
+              <img src="../static/images/menu.png" />
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
+          </NavbarBottomLeft>
+          <NavbarBottomRight>
+            <img src="../static/images/notification.png" />
+          </NavbarBottomRight>
+        </NavbarBottom>
+      </Container>
     </NavbarWrapper>
   );
 }
