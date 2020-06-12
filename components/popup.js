@@ -12,10 +12,15 @@ const customStyles = {
     right: '0',
     bottom: '0',
     width: '100%',
+    height: '100%',
+    background: 'white',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-end',
     borderRadius: '0',
+    padding: '0',
+    margin: '0',
+    zIndex: '60',
   },
 };
 
@@ -95,7 +100,7 @@ border: none;
 ReactModal.setAppElement('#popup');
 
 export default function PopUp() {
-  const [modalIsOpen, setIsOpen] = React.useState(true);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function afterOpenModal() {}
 

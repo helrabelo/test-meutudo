@@ -1,112 +1,100 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import styles from 'styled-components';
 
-/* eslint global-require:0, no-nested-ternary:0 */
-import { Menu, ActivityIndicator, NavBar } from 'antd-mobile';
+import { Button, Menu, MenuItem } from '@material-ui/core';
 
-const data = [
-  {
-    value: '1',
-    label: 'Home',
-  },
-  {
-    value: '2',
-    label: 'Prevention',
-  },
-];
+const NavbarWrapper = styles.div`
+  border: 3px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
-class Navbar extends React.Component {
-  constructor(...args) {
-    super(...args);
-    this.state = {
-      initData: '',
-      show: false,
-    };
-  }
-  onChange = (value) => {
-    let label = '';
-    data.forEach((dataItem) => {
-      if (dataItem.value === value[0]) {
-        label = dataItem.label;
-        if (dataItem.children && value[1]) {
-          dataItem.children.forEach((cItem) => {
-            if (cItem.value === value[1]) {
-              label += ` ${cItem.label}`;
-            }
-          });
-        }
-      }
-    });
-    console.log(label);
-  };
-  handleClick = (e) => {
-    e.preventDefault(); // Fix event propagation on Android
-    this.setState({
-      show: !this.state.show,
-    });
-    // mock for async data loading
-    if (!this.state.initData) {
-      setTimeout(() => {
-        this.setState({
-          initData: data,
-        });
-      }, 500);
-    }
+const NavbarTop = styles.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const NavbarTopLeft = styles.div`
+`;
+
+const NavbarTopRight = styles.div`
+`;
+
+const NavbarBottom = styles.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`;
+
+const NavbarBottomLeft = styles.div`
+`;
+
+const NavbarBottomRight = styles.div`
+`;
+
+const Clock = styles.p`
+  font-family: 'SF Pro';
+  font-size: 0.8em;
+  4
+`;
+
+export default function Navbar() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
   };
 
-  onMaskClick = () => {
-    this.setState({
-      show: false,
-    });
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
-  render() {
-    const { initData, show } = this.state;
-    const menuEl = (
-      <Menu
-        className="single-foo-menu"
-        data={initData}
-        value={['1']}
-        level={1}
-        onChange={this.onChange}
-        height="100%"
-      />
-    );
-    const loadingEl = (
-      <div
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <ActivityIndicator size="large" />
-      </div>
-    );
-    return (
-      <div className={show ? 'single-menu-active' : ''}>
-        <div>
-          <NavBar
-            leftContent="Menu"
-            mode="dark"
-            onLeftClick={this.handleClick}
-            className="single-top-nav-bar"
+  return (
+    <NavbarWrapper>
+      <NavbarTop>
+        <NavbarTopLeft>
+          <Clock>9:41</Clock>
+        </NavbarTopLeft>
+        <NavbarTopRight>
+          <img src="../static/images/Wifi.svg" />
+          <img
+            src="../static/images/CellularConnection.svg"
+            style={{ marginLeft: '2px' }}
           />
-        </div>
-        {show ? (initData ? menuEl : loadingEl) : null}
-        {show ? <div className="menu-mask" onClick={this.onMaskClick} /> : null}
-      </div>
-    );
-  }
+          <img
+            src="../static/images/Battery.svg"
+            style={{ marginLeft: '2px' }}
+          />
+        </NavbarTopRight>
+      </NavbarTop>
+      <NavbarBottom>
+        <NavbarBottomLeft>
+          <Button
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            onClick={handleClick}
+          >
+            Open Menu
+          </Button>
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={handleClose}>Logout</MenuItem>
+          </Menu>
+        </NavbarBottomLeft>
+        <NavbarBottomRight>
+          <img src="../static/images/notification.png" />
+        </NavbarBottomRight>
+      </NavbarBottom>
+    </NavbarWrapper>
+  );
 }
-
-export default Navbar;
-// ReactDOM.render(<Navbar />, document.getElementById('navbar'));
-
-// export default Navbar;
-
-// if (typeof window !== 'undefined') {
-//   ReactDOM.render(<Navbar />, document.getElementById('menu'));
-// }
