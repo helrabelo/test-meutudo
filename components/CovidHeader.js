@@ -43,7 +43,7 @@ class SimpleSelect extends Component {
     super(props);
     this.state = {
       default: 'US',
-      selected: 'brazil',
+      selected: 'argentina',
       countries: [],
       error: null,
     };
@@ -72,7 +72,7 @@ class SimpleSelect extends Component {
   populateItems() {
     let countriesList = this.state.countries.map((country, index) => (
       <MenuItem
-        value={country.ISO2}
+        value={country.Slug}
         style={{ display: 'flex' }}
         key={country.Country}
       >
@@ -89,7 +89,7 @@ class SimpleSelect extends Component {
       </MenuItem>
     ));
 
-    console.log(typeof this.state.default);
+    console.log(this.state.countries);
     return countriesList;
   }
 

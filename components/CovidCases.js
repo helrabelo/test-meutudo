@@ -167,22 +167,10 @@ class CovidCases extends Component {
           ],
         })
       );
-    // .then((response) => response.data);
-
-    try {
-      this.setState({
-        confirmed: response.data.Global.TotalConfirmed.toString(),
-        active: response.data.Global.TotalConfirmed,
-        recovered: response.data.Global.TotalRecovered,
-        deaths: response.data.Global.TotalDeaths,
-      });
-    } catch (error) {
-      this.setState({ error });
-    }
   }
 
   componentDidUpdate() {
-    console.log('Covidcases props: ' + this.props.country);
+    this.fetchData();
   }
 
   componentDidMount() {
