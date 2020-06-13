@@ -43,7 +43,7 @@ class SimpleSelect extends Component {
     super(props);
     this.state = {
       default: 'US',
-      selected: '',
+      selected: 'brazil',
       countries: [],
       error: null,
     };

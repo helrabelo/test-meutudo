@@ -100,12 +100,6 @@ const StatLabel = styles.span`
 
 const StatValue = styles.span``;
 
-const data = [
-  { x: '26', y: 26 },
-  { x: '63%', y: 63 },
-  { x: '11%', y: 11 },
-];
-
 class CovidCases extends Component {
   constructor(props) {
     super(props);
@@ -117,13 +111,61 @@ class CovidCases extends Component {
     recovered: 'loading',
     deaths: 'loading',
     error: null,
+    pieData: [
+      { x: '', y: 100 },
+      { x: '', y: 0 },
+      { x: '', y: 0 },
+    ],
   };
 
   async fetchData() {
     const response = await axios
-      .get('https://api.covid19api.com/live/country/switzerland')
+      .get(`https://api.covid19api.com/live/country/${this.props.country}`)
+      // .then((response) =>
+      //   console.log(
+      //     response.data[Object.keys(response.data).length - 1].Country
+      //   )
+      // )
       .then((response) =>
-        console.log(response.data[Object.keys(response.data).length - 1])
+        this.setState({
+          country: response.data[Object.keys(response.data).length - 1].Country,
+          confirmed:
+            response.data[Object.keys(response.data).length - 1].Confirmed,
+          active: response.data[Object.keys(response.data).length - 1].Active,
+          recovered:
+            response.data[Object.keys(response.data).length - 1].Recovered,
+          deaths: response.data[Object.keys(response.data).length - 1].Deaths,
+          pieData: [
+            {
+              x: `${(
+                (response.data[Object.keys(response.data).length - 1]
+                  .Recovered /
+                  response.data[Object.keys(response.data).length - 1]
+                    .Confirmed) *
+                100
+              ).toFixed(2)}%`,
+              y: response.data[Object.keys(response.data).length - 1].Recovered,
+            },
+            {
+              x: `${(
+                (response.data[Object.keys(response.data).length - 1].Active /
+                  response.data[Object.keys(response.data).length - 1]
+                    .Confirmed) *
+                100
+              ).toFixed(2)}%`,
+              y: response.data[Object.keys(response.data).length - 1].Active,
+            },
+            {
+              x: `${(
+                (response.data[Object.keys(response.data).length - 1].Deaths /
+                  response.data[Object.keys(response.data).length - 1]
+                    .Confirmed) *
+                100
+              ).toFixed(2)}%`,
+              y: response.data[Object.keys(response.data).length - 1].Deaths,
+            },
+          ],
+        })
       );
     // .then((response) => response.data);
 
@@ -166,7 +208,7 @@ class CovidCases extends Component {
                 standalone={false}
                 width={270}
                 height={270}
-                data={data}
+                data={this.state.pieData}
                 innerRadius={105}
                 labelRadius={112}
                 startAngle={-90}
@@ -181,7 +223,7 @@ class CovidCases extends Component {
                 style={{ fontSize: 40, fontFamily: 'Roboto' }}
                 x={135}
                 y={135}
-                text="9255"
+                text={this.state.confirmed}
               />
             </svg>
           </PieWrapper>
@@ -193,17 +235,17 @@ class CovidCases extends Component {
               <CasesListItem>
                 <StatusItem style={{ background: '#FFC259' }} />
                 <ItemTitle>Active Cases</ItemTitle>
-                <ItemTotal>6000</ItemTotal>
+                <ItemTotal>{this.state.active}</ItemTotal>
               </CasesListItem>
               <CasesListItem>
                 <StatusItem style={{ background: '#55E13A' }} />
                 <ItemTitle>Discharge</ItemTitle>
-                <ItemTotal>2500</ItemTotal>
+                <ItemTotal>{this.state.recovered}</ItemTotal>
               </CasesListItem>
               <CasesListItem>
                 <StatusItem style={{ background: '#FF5959' }} />
                 <ItemTitle>Deaths</ItemTitle>
-                <ItemTotal>755</ItemTotal>
+                <ItemTotal>{this.state.deaths}</ItemTotal>
               </CasesListItem>
             </CasesList>
           </CasesWrapper>
