@@ -50,23 +50,6 @@ class SimpleSelect extends Component {
   };
 
   async fetchData() {
-    // <MenuItem
-    //   value={this.state.default}
-    //   style={{ display: 'flex' }}
-    //   key={index}
-    // >
-    //   <ReactCountryFlag
-    //     alt="US"
-    //     svg
-    //     countryCode={this.state.default}
-    //     style={{
-    //       fontSize: '20px',
-    //       borderRadius: '100px',
-    //     }}
-    //   />
-    //   <p>{this.state.default}</p>
-    // </MenuItem>
-    //
     let response = await axios
       .get('https://api.covid19api.com/countries')
       .then((response) => {
@@ -86,21 +69,27 @@ class SimpleSelect extends Component {
     this.setState({ selected: event.target.value });
   };
 
-  sayHello = () => {
-    return (
-      <MenuItem value={this.state.selected} style={{ display: 'flex' }}>
+  populateItems = () => {
+    let countriesList = this.state.countries.map((country, index) => (
+      <MenuItem
+        value={country.ISO2}
+        style={{ display: 'flex' }}
+        key={country.Country}
+      >
         <ReactCountryFlag
           alt="US"
           svg
-          countryCode={this.state.default}
+          countryCode={country.ISO2}
           style={{
             fontSize: '20px',
             borderRadius: '100px',
           }}
         />
-        <p>{this.state.default}</p>
+        <p>{country.ISO2}</p>
       </MenuItem>
-    );
+    ));
+    console.log(countriesList);
+    return countriesList;
   };
 
   render() {
@@ -119,7 +108,7 @@ class SimpleSelect extends Component {
                 defaultValue={this.state.default}
                 style={{ margin: '0 10px' }}
               >
-                {this.sayHello()}
+                {this.populateItems()}
               </Select>
             </FormControl>
           </Container>
