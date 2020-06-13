@@ -4,6 +4,9 @@ import * as V from 'victory';
 import { VictoryPie, VictoryLabel, VictoryTheme } from 'victory';
 import styles from 'styled-components';
 
+import MenuItem from '@material-ui/core/MenuItem';
+import ReactCountryFlag from 'react-country-flag';
+
 const Container = styles.div`
   padding: 0 20px; 
 `;
@@ -95,7 +98,7 @@ const StatLabel = styles.span`
   font-weight: 200;
 `;
 
-const StatValue = styles.p``;
+const StatValue = styles.span``;
 
 const data = [
   { x: '26', y: 26 },
@@ -114,7 +117,7 @@ class CovidCases extends Component {
 
   async fetchData() {
     const response = await axios.get('https://api.covid19api.com/summary');
-    console.log(response);
+
     try {
       this.setState({
         confirmed: response.data.Global.TotalConfirmed.toString(),
@@ -175,17 +178,17 @@ class CovidCases extends Component {
           <CasesWrapper>
             <CasesList>
               <CasesListItem>
-                <StatusItem style={{ background: '#FFC259' }}></StatusItem>
+                <StatusItem style={{ background: '#FFC259' }} />
                 <ItemTitle>Active Cases</ItemTitle>
                 <ItemTotal>6000</ItemTotal>
               </CasesListItem>
               <CasesListItem>
-                <StatusItem style={{ background: '#55E13A' }}></StatusItem>
+                <StatusItem style={{ background: '#55E13A' }} />
                 <ItemTitle>Discharge</ItemTitle>
                 <ItemTotal>2500</ItemTotal>
               </CasesListItem>
               <CasesListItem>
-                <StatusItem style={{ background: '#FF5959' }}></StatusItem>
+                <StatusItem style={{ background: '#FF5959' }} />
                 <ItemTitle>Deaths</ItemTitle>
                 <ItemTotal>755</ItemTotal>
               </CasesListItem>

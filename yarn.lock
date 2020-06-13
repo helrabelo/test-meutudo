@@ -7226,11 +7226,6 @@ react-country-flag@2.1.0:
   resolved "https://registry.yarnpkg.com/react-country-flag/-/react-country-flag-2.1.0.tgz#8c6a70d4c496370112e506b79c5fc2a354841700"
   integrity sha512-OvPNRYFWpPPoh71vwM/z5dhSQOq8Lbh5Kn6XrQVxLUQ+Ps8+JaP+TQeRS3wk3M3gA+cCc6ZBNSPPXH7+Sep6+Q==
 
-react-country-flags@2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-country-flags/-/react-country-flags-2.1.0.tgz#0a55319313b0bdf5ac5343af7de643e3bfb124f0"
-  integrity sha512-vy/WghI80SX8qclllM/e8LlTBHObofS7wL5n+72ZnJZCWs5nkp/yf3xeQyC1NWOGUeHbz1BPchwoPkIiHcioFw==
-
 react-dom@16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
@@ -7245,13 +7240,6 @@ react-fast-compare@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
-
-react-flags-select@^1.1.12:
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/react-flags-select/-/react-flags-select-1.1.12.tgz#428b34f928eab875e8e0296046410d30d75cb818"
-  integrity sha512-icWC8pHdfTQTIqpLTgPcd4tFlfgUdiwzUJaSkPMzP6BEMRrh8yAJC55IkgmJV8PIX8qTUrEETZ6+6115hGjR7g==
-  dependencies:
-    prop-types "^15.5.8"
 
 react-is@16.13.1, react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1:
   version "16.13.1"
