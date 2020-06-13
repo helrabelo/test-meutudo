@@ -100,7 +100,7 @@ border: none;
 ReactModal.setAppElement('#popup');
 
 export default function PopUp() {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(true);
 
   function afterOpenModal() {}
 
