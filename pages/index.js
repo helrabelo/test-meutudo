@@ -9,7 +9,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Test Meu Tudo</title>
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,800"
+          rel="stylesheet"
+        />
       </Head>
       <div id="popup"></div>
       <Navbar />
