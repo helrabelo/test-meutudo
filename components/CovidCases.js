@@ -111,6 +111,7 @@ class CovidCases extends Component {
     super(props);
   }
   state = {
+    country: this.props.country,
     confirmed: 'loading..',
     active: 'loading..',
     recovered: 'loading',
@@ -119,7 +120,12 @@ class CovidCases extends Component {
   };
 
   async fetchData() {
-    const response = await axios.get('https://api.covid19api.com/summary');
+    const response = await axios
+      .get('https://api.covid19api.com/live/country/switzerland')
+      .then((response) =>
+        console.log(response.data[Object.keys(response.data).length - 1])
+      );
+    // .then((response) => response.data);
 
     try {
       this.setState({
