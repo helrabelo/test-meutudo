@@ -24,7 +24,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <div>{children}</div>
         </Box>
       )}
     </div>
@@ -52,9 +52,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CovidTabs() {
+export default function CovidTabs(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+
+  console.log(props);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -76,7 +78,7 @@ export default function CovidTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <CovidCases />
+        <CovidCases country={props.selectedCountry} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <CovidPrevention />

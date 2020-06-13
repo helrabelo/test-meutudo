@@ -61,7 +61,7 @@ const ItemTitle = styles.p`
   color: #3C4954;
 `;
 
-const ItemTotal = styles.h3`
+const ItemTotal = styles.span`
   flex: 1;
   font-weight: normal;
   text-align: right;
@@ -107,6 +107,9 @@ const data = [
 ];
 
 class CovidCases extends Component {
+  constructor(props) {
+    super(props);
+  }
   state = {
     confirmed: 'loading..',
     active: 'loading..',
@@ -128,6 +131,10 @@ class CovidCases extends Component {
     } catch (error) {
       this.setState({ error });
     }
+  }
+
+  componentDidUpdate() {
+    console.log('Covidcases props: ' + this.props.country);
   }
 
   componentDidMount() {

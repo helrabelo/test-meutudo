@@ -6,6 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import ReactCountryFlag from 'react-country-flag';
+import CovidTabs from './CovidTabs';
 import axios from 'axios';
 
 import styles from 'styled-components';
@@ -40,14 +41,13 @@ const Container = styles.div`
 class SimpleSelect extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      default: 'US',
+      selected: '',
+      countries: [],
+      error: null,
+    };
   }
-
-  state = {
-    default: 'US',
-    selected: '',
-    countries: [],
-    error: null,
-  };
 
   async fetchData() {
     let response = await axios
@@ -62,14 +62,14 @@ class SimpleSelect extends Component {
 
   componentDidMount() {
     this.fetchData();
+    this.populateItems();
   }
 
   handleChange = (event) => {
-    console.log(event.target.value);
     this.setState({ selected: event.target.value });
   };
 
-  populateItems = () => {
+  populateItems() {
     let countriesList = this.state.countries.map((country, index) => (
       <MenuItem
         value={country.ISO2}
@@ -88,9 +88,10 @@ class SimpleSelect extends Component {
         <p>{country.ISO2}</p>
       </MenuItem>
     ));
-    console.log(countriesList);
+
+    console.log(typeof this.state.default);
     return countriesList;
-  };
+  }
 
   render() {
     return (
@@ -104,7 +105,7 @@ class SimpleSelect extends Component {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={this.state.selected}
-                onChange={this.handleChange}
+                onChange={(e) => this.handleChange(e)}
                 defaultValue={this.state.default}
                 style={{ margin: '0 10px' }}
               >
@@ -113,6 +114,7 @@ class SimpleSelect extends Component {
             </FormControl>
           </Container>
         </CovidHeaderWrapper>
+        <CovidTabs selectedCountry={this.state.selected} />
       </>
     );
   }
